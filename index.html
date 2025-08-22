@@ -1,74 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Info</title>
-
-  <!-- Meta tags for social sharing -->
-  <meta property="og:title" content="Student Info Page" />
-  <meta property="og:description" content="Check out student information and share it on Facebook!" />
-  <meta property="og:image" content="https://picsum.photos/400/200" /> <!-- demo image -->
-  <meta property="og:url" content="https://your-username.github.io/your-repo/" /> <!-- replace after deploy -->
+  <meta charset="UTF-8" />
+  <meta property="og:title" content="My Student Page" />
+  <meta property="og:description" content="Demo student info with share option." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1607746882042-944635dfe10e" />
+  <meta property="og:url" content="https://abdul-aual.github.io/fbsharedemo/" />
   <meta property="og:type" content="website" />
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 20px;
-      text-align: center;
-    }
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 400px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .card img {
-      width: 100%;
-      border-radius: 12px;
-    }
-    .card h2 {
-      margin: 15px 0 5px;
-    }
-    .card p {
-      color: #555;
-    }
-    .share-btn {
-      margin-top: 15px;
-      display: inline-block;
-      padding: 10px 20px;
-      background: #1877f2;
-      color: #fff;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .share-btn:hover {
-      background: #145db2;
-    }
-  </style>
+  <title>FB Share Demo</title>
 </head>
 <body>
+  <h1>FB Share Demo</h1>
+  <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" width="300">
 
-  <div class="card">
-    <img src="https://picsum.photos/400/200" alt="Student Demo">
-    <h2>Arif Hossain</h2>
-    <p>Class: 10 <br> Roll: 12 <br> Dhaka, Bangladesh</p>
-    <a id="fbShare" href="#" target="_blank" class="share-btn">📤 Share on Facebook</a>
-  </div>
-
-  <script>
-    // When deployed to GitHub, replace this with your live site link
-    const pageUrl = "https://your-username.github.io/your-repo/";
-
-    document.getElementById("fbShare").href =
-      `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
-  </script>
-
+  <br><br>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://abdul-aual.github.io/fbsharedemo/" target="_blank">
+    Share on Facebook
+  </a>
 </body>
 </html>
