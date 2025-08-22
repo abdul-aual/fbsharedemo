@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
   <meta charset="UTF-8">
-  <title>Students Info</title>
+  <title>Student Info</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 20px;
+      text-align: center;
+      margin: 20px;
     }
     .student-card {
-      background: #fff;
-      border-radius: 12px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
       padding: 15px;
       margin: 15px auto;
-      max-width: 400px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      text-align: center;
+      width: 300px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
     }
     .student-card img {
       width: 100px;
@@ -25,80 +23,66 @@
       border-radius: 50%;
       margin-bottom: 10px;
     }
-    .student-card h3 {
-      margin: 8px 0 5px;
-    }
-    .student-card p {
-      margin: 3px 0;
-      color: #555;
-    }
-    .share-buttons {
+    .share-btns {
       margin-top: 10px;
     }
-    .share-buttons button {
+    .share-btns a {
+      display: inline-block;
       margin: 5px;
       padding: 8px 12px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
     }
     .fb { background: #1877f2; }
-    .whatsapp { background: #25D366; }
+    .messenger { background: #0084ff; }
+    .wa { background: #25d366; }
   </style>
 </head>
 <body>
 
-  <h2>Students Information</h2>
+  <h1>📖 ছাত্রছাত্রী তথ্য</h1>
 
-  <div class="student-card" id="student1">
-    <img src="https://via.placeholder.com/100" alt="Student Image">
-    <h3>Arif Hossain</h3>
-    <p>Father: Kamal Hossain</p>
-    <p>Mother: Rokeya Begum</p>
-    <p>Address: Dhaka, Bangladesh</p>
-    <div class="share-buttons">
-      <button class="fb" onclick="shareFB('student1')">Share to Facebook</button>
-      <button class="whatsapp" onclick="shareWA('student1')">Share to WhatsApp</button>
+  <div class="student-card">
+    <img src="https://via.placeholder.com/100" alt="Student">
+    <h3>আরিফ হোসেন</h3>
+    <p>ঢাকা, বাংলাদেশ</p>
+    <div class="share-btns">
+      <a class="fb" target="_blank"
+         href="https://www.facebook.com/sharer/sharer.php?u=https://yourgithubpageurl">
+         📘 Share on Facebook
+      </a>
+      <a class="messenger" target="_blank"
+         href="fb-messenger://share?link=https://yourgithubpageurl">
+         💬 Messenger
+      </a>
+      <a class="wa" target="_blank"
+         href="https://api.whatsapp.com/send?text=https://yourgithubpageurl">
+         📱 WhatsApp
+      </a>
     </div>
   </div>
 
-  <div class="student-card" id="student2">
-    <img src="https://via.placeholder.com/100" alt="Student Image">
-    <h3>Riya Akter</h3>
-    <p>Father: Anwar Hossain</p>
-    <p>Mother: Salma Begum</p>
-    <p>Address: Chattogram, Bangladesh</p>
-    <div class="share-buttons">
-      <button class="fb" onclick="shareFB('student2')">Share to Facebook</button>
-      <button class="whatsapp" onclick="shareWA('student2')">Share to WhatsApp</button>
+  <div class="student-card">
+    <img src="https://via.placeholder.com/100" alt="Student">
+    <h3>তানভীর ইসলাম</h3>
+    <p>চট্টগ্রাম, বাংলাদেশ</p>
+    <div class="share-btns">
+      <a class="fb" target="_blank"
+         href="https://www.facebook.com/sharer/sharer.php?u=https://yourgithubpageurl">
+         📘 Share on Facebook
+      </a>
+      <a class="messenger" target="_blank"
+         href="fb-messenger://share?link=https://yourgithubpageurl">
+         💬 Messenger
+      </a>
+      <a class="wa" target="_blank"
+         href="https://api.whatsapp.com/send?text=https://yourgithubpageurl">
+         📱 WhatsApp
+      </a>
     </div>
   </div>
-
-  <script>
-    function shareFB(id) {
-      const student = document.getElementById(id);
-      const name = student.querySelector("h3").innerText;
-      const address = student.querySelectorAll("p")[2].innerText;
-
-      const text = `${name} - ${address}`;
-      const url = encodeURIComponent(window.location.href);
-      const fbLink = `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${encodeURIComponent(text)}`;
-
-      window.open(fbLink, "_blank");
-    }
-
-    function shareWA(id) {
-      const student = document.getElementById(id);
-      const name = student.querySelector("h3").innerText;
-      const address = student.querySelectorAll("p")[2].innerText;
-
-      const text = `${name} - ${address}\nCheck more: ${window.location.href}`;
-      const waLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
-
-      window.open(waLink, "_blank");
-    }
-  </script>
 
 </body>
 </html>
