@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Students Info</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+    .student-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      margin: 15px auto;
+      max-width: 400px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .student-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .student-card h3 {
+      margin: 8px 0 5px;
+    }
+    .student-card p {
+      margin: 3px 0;
+      color: #555;
+    }
+    .share-buttons {
+      margin-top: 10px;
+    }
+    .share-buttons button {
+      margin: 5px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #fff;
+    }
+    .fb { background: #1877f2; }
+    .whatsapp { background: #25D366; }
+  </style>
+</head>
+<body>
+
+  <h2>Students Information</h2>
+
+  <div class="student-card" id="student1">
+    <img src="https://via.placeholder.com/100" alt="Student Image">
+    <h3>Arif Hossain</h3>
+    <p>Father: Kamal Hossain</p>
+    <p>Mother: Rokeya Begum</p>
+    <p>Address: Dhaka, Bangladesh</p>
+    <div class="share-buttons">
+      <button class="fb" onclick="shareFB('student1')">Share to Facebook</button>
+      <button class="whatsapp" onclick="shareWA('student1')">Share to WhatsApp</button>
+    </div>
+  </div>
+
+  <div class="student-card" id="student2">
+    <img src="https://via.placeholder.com/100" alt="Student Image">
+    <h3>Riya Akter</h3>
+    <p>Father: Anwar Hossain</p>
+    <p>Mother: Salma Begum</p>
+    <p>Address: Chattogram, Bangladesh</p>
+    <div class="share-buttons">
+      <button class="fb" onclick="shareFB('student2')">Share to Facebook</button>
+      <button class="whatsapp" onclick="shareWA('student2')">Share to WhatsApp</button>
+    </div>
+  </div>
+
+  <script>
+    function shareFB(id) {
+      const student = document.getElementById(id);
+      const name = student.querySelector("h3").innerText;
+      const address = student.querySelectorAll("p")[2].innerText;
+
+      const text = `${name} - ${address}`;
+      const url = encodeURIComponent(window.location.href);
+      const fbLink = `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${encodeURIComponent(text)}`;
+
+      window.open(fbLink, "_blank");
+    }
+
+    function shareWA(id) {
+      const student = document.getElementById(id);
+      const name = student.querySelector("h3").innerText;
+      const address = student.querySelectorAll("p")[2].innerText;
+
+      const text = `${name} - ${address}\nCheck more: ${window.location.href}`;
+      const waLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
+
+      window.open(waLink, "_blank");
+    }
+  </script>
+
+</body>
+</html>
